@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "template_version": 0
+  },
+  "fixtures": [
+    {
+      "name": "gold_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "gold"
+      }
+    },
+    {
+      "name": "gold_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${gold_product:id}",
+        "lookup_key": "sample_gold",
+        "currency": "usd",
+        "unit_amount": 1500,
+        "recurring": {
+          "interval": "month"
+        },
+        "metadata": {
+          "sample": "fixed-price"
+        }
+      }
+    },
+    {
+      "name": "platinum_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "platinum"
+      }
+    },
+    {
+      "name": "platinum_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${platinum_product:id}",
+        "lookup_key": "sample_platinum",
+        "currency": "usd",
+        "unit_amount": 2000,
+        "recurring": {
+          "interval": "month"
+        },
+        "metadata": {
+          "sample": "fixed-price"
+        }
+      }
+    },
+    {
+      "name": "black_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "black"
+      }
+    },
+    {
+      "name": "black_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${black_product:id}",
+        "lookup_key": "sample_black",
+        "currency": "usd",
+        "unit_amount": 2500,
+        "recurring": {
+          "interval": "month"
+        },
+        "metadata": {
+          "sample": "fixed-price"
+        }
+      }
+    }
+  ]
+}
